@@ -1,8 +1,10 @@
-import { Flex, Image, Grid } from "@mantine/core";
+import { Flex, Image, Grid, Title } from "@mantine/core";
+import "../02Professor/Professor.scss";
 
 const Professor = (props) => {
     return (
         <div id="Professor">
+            <Title className="title">Professor</Title>
 
             <Flex>
                 <Image

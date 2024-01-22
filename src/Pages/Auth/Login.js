@@ -1,4 +1,4 @@
-import { Input, Button, Center, Image, Space, Stack, Card } from "@mantine/core";
+import { Input, Button, Center, Image, Space, Stack, Card, Text, Title } from "@mantine/core";
 import "../Auth/Login.scss";
 import logo from "../../assets/logo.png";
 
@@ -21,13 +21,14 @@ const Login = (props) => {
                 padding={"lg"}
                 radius={"md"}
                 withBorder
-                style={{width:'50%', marginTop:'10px'}}
+                style={{width:'40%', marginTop:'10px'}}
             >
                 {/* <Card.Section>
                     
                 </Card.Section> */}
                 <Space h="xl" />
-                
+                <Title order={2}>成員登入</Title>
+                <Space h="xl" />
                 <Stack
                     align="center"
                     justify="flex-start"

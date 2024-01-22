@@ -1,0 +1,13 @@
+#Activity {
+    text-align: center;
+    .title {
+        text-align: start;
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    .photoDiv {
+        width: calc((100% - 80px) / 4);
+        height: 350px;
+        margin: 10px;
+    }
+}

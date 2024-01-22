@@ -29,7 +29,7 @@ const Layout = () => {
               <Group ml="xl" gap={0} visibleFrom="sm">
                 <NavLink to="Home" className="link"><UnstyledButton className="control">Home</UnstyledButton></NavLink>
                 <NavLink to="Professor" className="link"><UnstyledButton UnstyledButton className="control">Professor</UnstyledButton></NavLink>
-                <Menu trigger="hover" openDelay={100} closeDelay={100} shadow="md" width={200}>
+                <Menu trigger="hover" openDelay={100} closeDelay={100} shadow="md" width={200} className="link">
                   <Menu.Target>
                     <UnstyledButton className="control">Achievement</UnstyledButton>
                   </Menu.Target>
