@@ -43,7 +43,7 @@ const Activity = (props) => {
     const maxPage = _.ceil(data.length / 12);
     const paginatedData = _.chunk(data, itemsPage);
     //modal
-    const [opened, {open, close}] = useDisclosure(false);
+    const [opened, { open, close }] = useDisclosure(false);
 
     const setPage = (page) => {
         setActivitePage(page);
@@ -55,6 +55,19 @@ const Activity = (props) => {
     return (
         <div id="Activity">
             <Title className="title">Activity</Title>
+            <Modal 
+                
+                opened={opened} 
+                onClose={close} 
+                title="Activity" 
+                centered
+                            
+            >
+                <Image
+                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                />
+                123456
+            </Modal>
             
             <Flex
                 justify={"flex-start"}
@@ -63,7 +76,7 @@ const Activity = (props) => {
             >
                 {_.map(paginatedData[activePage - 1], (data, index)=> (
                     <>
-                        <Modal 
+                        {/* <Modal 
                             key={index} 
                             opened={opened} 
                             onClose={close} 
@@ -75,7 +88,7 @@ const Activity = (props) => {
                                 src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
                                 
                             />
-                        </Modal>
+                        </Modal> */}
                         <Card 
                             key={index} 
                             shadow="sm" 
