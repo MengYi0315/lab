@@ -23,9 +23,6 @@ const Login = (props) => {
                 withBorder
                 style={{width:'40%', marginTop:'10px'}}
             >
-                {/* <Card.Section>
-                    
-                </Card.Section> */}
                 <Space h="xl" />
                 <Title order={2}>成員登入</Title>
                 <Space h="xl" />

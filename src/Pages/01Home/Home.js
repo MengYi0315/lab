@@ -13,31 +13,29 @@ const Home = (props) => {
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
     ];
 
     return (
-        <div id="Home">
-            
+        <div id="Home">        
             <Carousel
                 className='carousel'
                 align={'start'}
-                dragFree
+                draggable
                 height={600}
                 slideGap="md"
                 withIndicators
             >
                 <Carousel.Slide>
-                    <img src={carousel1}></img>
+                    <img src={carousel1} style={{width:'100%'}}></img>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                    <img src={carousel2}></img>
+                    <img src={carousel2} style={{width:'100%'}}></img>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                    <img src={carousel3}></img>
+                    <img src={carousel3} style={{width:'100%'}}></img>
                 </Carousel.Slide>
-                {/* <Carousel.Slide>
-                    <img src={carousel4}></img>
-                </Carousel.Slide> */}
             </Carousel>
             <Space h='md' />
             <Flex
