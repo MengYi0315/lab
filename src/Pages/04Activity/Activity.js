@@ -40,7 +40,7 @@ const Activity = (props) => {
     //Page相關
     const [activePage, setActivitePage] = useState(1);
     const itemsPage = 12;
-    const maxPage = _.ceil(data.length / 12);
+    const maxPage = _.ceil(data.length / itemsPage);
     const paginatedData = _.chunk(data, itemsPage);
     //modal
     const [opened, { open, close }] = useDisclosure(false);

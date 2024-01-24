@@ -1,6 +1,7 @@
 import _ from 'lodash';
+import { useState } from 'react';
 import { Carousel } from '@mantine/carousel';
-import { Flex, Grid, Space, Text } from '@mantine/core';
+import { Flex, Grid, Space, Text, Pagination, Center } from '@mantine/core';
 import "../01Home/Home.scss";
 
 import carousel1 from "../../assets/carousel/1.png";
@@ -15,11 +16,22 @@ const Home = (props) => {
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+
     ];
 
     const { newsdata, carouseldata } = props;
+    const [activePage, setActivitePage] = useState(1);
+    const itemPage = 5;
+    const maxPage = _.ceil(news.length / itemPage);
+    const paginatedData = _.chunk(news, itemPage);
     
-
+    const setPage = (page) => {
+        setActivitePage(page);
+    };
+    console.log('page data', paginatedData)
     return (
         <div id="Home">        
             <Carousel
@@ -48,8 +60,8 @@ const Home = (props) => {
                 direction={'column'}
                 style={{width:'100%'}}
             >
-                {_.map(news, (news) => (
-                    <Grid gutter={'md'} style={{width:'100%'}}>
+                {_.map(paginatedData[activePage - 1], (news, index) => (
+                    <Grid gutter={'md'} style={{width:'100%'}} key={index}>
                         <Grid.Col span={10}>
                             <Text fw={500}>
                                 {news.title}
@@ -60,9 +72,12 @@ const Home = (props) => {
                                 {news.date}
                             </Text>
                         </Grid.Col>
-                    </Grid>
+                    </Grid>                    
                 ))}
             </Flex>
+            <Center>
+                <Pagination total={maxPage} value={activePage} onChange={setPage} siblings={1} />
+            </Center>
         </div>
     )
 }
