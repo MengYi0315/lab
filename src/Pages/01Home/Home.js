@@ -17,6 +17,9 @@ const Home = (props) => {
         {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
     ];
 
+    const { newsdata, carouseldata } = props;
+    
+
     return (
         <div id="Home">        
             <Carousel
