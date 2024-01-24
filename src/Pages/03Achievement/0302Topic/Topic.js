@@ -86,7 +86,7 @@ const Topic = (props) => {
         },
     ];
 
-    const [selectYear, setSelectYear] = useState('108');
+    const [selectYear, setSelectYear] = useState('107');
 
     console.log('select year', selectYear);
     console.log('select year data', _.filter(data, {'year': selectYear}));
@@ -94,7 +94,7 @@ const Topic = (props) => {
         <div id="Topic">
             <Title className="title">Topic</Title>
             
-            <Tabs defaultValue="108">
+            <Tabs defaultValue="107">
                 <Tabs.List>
                     {_.map(yearData, (data) => (
                         <Tabs.Tab 
@@ -145,33 +145,9 @@ const Topic = (props) => {
                         </Card>
                     </Tabs.Panel>
                 ))}
-                {/* <Tabs.Panel value={selectYear}>
-                    
-                </Tabs.Panel> */}
+                
             </Tabs>
             
-            {/* <Card
-                shadow="sm"
-                padding="lg" 
-                radius="md" 
-                withBorder
-                // style={{width:'50%'}}
-            >
-                <Flex style={{width:'50%'}}>
-                    <Image
-                        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                        w={500}
-                    />
-                    <Stack
-                        align="flex-start"
-                        justify="flex-start"
-                    >
-                        <Text>123</Text>
-                        <Text>123</Text>
-                        <Text>123</Text>
-                    </Stack>
-                </Flex>
-            </Card> */}
         </div>
     )
 }
