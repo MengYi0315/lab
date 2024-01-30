@@ -13,8 +13,8 @@ const Professor = (props) => {
                         w={400}
                     />
                     <Stack style={{marginLeft:'50px'}}>
-                        <Text>姜琇森</Text>
-                        <Text>Chiang Hsiu-sen </Text>
+                        <Title order={3}>姜琇森</Title>
+                        <Title order={4}>Chiang Hsiu-sen </Title>
                         <Text>專長及研究領域：資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理</Text>
                         <Text>辦公室：臺中科技大學 宏業樓 6405室</Text>
                         <Text>專題研究室：台中科技大學 資訊樓 2602室</Text>

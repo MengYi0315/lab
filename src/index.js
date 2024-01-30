@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { MantineProvider, createTheme } from '@mantine/core';
+import './index.scss';
+import RouterApp from './Router';
 
-import './index.css';
-import App from './App';
-
-const theme = createTheme({
-  fontFamily: '"Noto Sans TC", sans-serif', 
-  primaryColor: 'indigo'
-});
+import store from "./store";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MantineProvider theme={theme}>
-      <App />
-    </MantineProvider>
+    <Provider store={store}>        
+      <RouterApp />
+    </Provider>
   </React.StrictMode>
+
 );
 
+  // <React.StrictMode>
+    
+  //     <RouterApp />
+    
+  // </React.StrictMode>
