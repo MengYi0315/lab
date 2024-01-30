@@ -8,7 +8,6 @@ import Award from "./Pages/03Achievement/0301Award/Award";
 import Topic from "./Pages/03Achievement/0302Topic/Topic";
 import Activity from "./Pages/04Activity/Activity";
 
-import './App.scss';
 import Login from './Pages/Auth/Login';
 
 const router = createBrowserRouter([
