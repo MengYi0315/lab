@@ -6,8 +6,9 @@ import { getToken } from "../utils/token";
 
 import {
     GET_TestData
-} from "../services/Lab01";
+} from "../services/Lab04";
 
+// Example
 function* GET_TestDataEffect({payload}) {
     try {
         const response = yield call (GET_TestData, payload);
@@ -19,5 +20,6 @@ function* GET_TestDataEffect({payload}) {
 
 
 export default function* Example() {
+    // Example
     yield takeLatest("GET_TestData", GET_TestDataEffect);
 }
