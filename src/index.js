@@ -19,7 +19,7 @@ root.render(
 
 );
 
-  // <React.StrictMode>
+  // <React.StrictMode> (嚴格模式檢查，可以不用)
     
   //     <RouterApp />
     

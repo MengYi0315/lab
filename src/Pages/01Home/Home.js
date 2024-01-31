@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Carousel } from '@mantine/carousel';
 import { Flex, Grid, Space, Text, Pagination, Center } from '@mantine/core';
 import "../01Home/Home.scss";
@@ -7,6 +7,7 @@ import "../01Home/Home.scss";
 import carousel1 from "../../assets/carousel/1.png";
 import carousel2 from "../../assets/carousel/2.png";
 import carousel3 from "../../assets/carousel/3.png";
+import { connect } from 'react-redux';
 // import carousel4 from "../../assets/carousel/4.png";
 
 const Home = (props) => {
@@ -31,7 +32,13 @@ const Home = (props) => {
     const setPage = (page) => {
         setActivitePage(page);
     };
-    console.log('page data', paginatedData)
+    // console.log('page data', paginatedData)
+
+    useEffect(() => {
+        props.GET_TestData();
+    }, []);
+    console.log(props);
+
     return (
         <div id="Home">        
             <Carousel
@@ -82,4 +89,18 @@ const Home = (props) => {
     )
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        GetTestData: _.get(state, "Lab01.TestData", []), 
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        GET_TestData(payload, callback, loading) {
+            dispatch({type: "GET_TestData", payload, callback, loading});
+        }, 
+    };
+};
+
+export default  connect(mapStateToProps, mapDispatchToProps)(Home);
