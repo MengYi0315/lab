@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/alt-text */
 import _ from 'lodash';
 import { useState, useEffect } from 'react';
 import { Carousel } from '@mantine/carousel';
@@ -8,7 +10,6 @@ import carousel1 from "../../assets/carousel/1.png";
 import carousel2 from "../../assets/carousel/2.png";
 import carousel3 from "../../assets/carousel/3.png";
 import { connect } from 'react-redux';
-// import carousel4 from "../../assets/carousel/4.png";
 
 const Home = (props) => {
     const news = [
@@ -23,7 +24,7 @@ const Home = (props) => {
 
     ];
 
-    const { newsdata, carouseldata } = props;
+    // const { newsdata, carouseldata } = props;
     const [activePage, setActivitePage] = useState(1);
     const itemPage = 5;
     const maxPage = _.ceil(news.length / itemPage);
@@ -38,6 +39,7 @@ const Home = (props) => {
         props.GET_TestData();
     }, []);
     console.log(props);
+    
 
     return (
         <div id="Home">        

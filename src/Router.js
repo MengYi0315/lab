@@ -16,6 +16,13 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        path: "/",
+        element: <Home />,
+        // handle: {
+        //   crumb: () => <Link to="/Home">首頁</Link>,
+        // },
+      },
+      {
         path: "Home",
         element: <Home />,
         // handle: {

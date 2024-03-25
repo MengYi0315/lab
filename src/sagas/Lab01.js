@@ -11,6 +11,7 @@ import {
 function* GET_TestDataEffect({payload}) {
     try {
         const response = yield call (GET_TestData, payload);
+        console.log(response)
         yield put ({ type: "SAVE_TestData", payload: response });
     } catch (err) {
         console.Consolelog(err);
