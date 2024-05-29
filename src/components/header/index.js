@@ -26,7 +26,7 @@ const Header = (props) => {
                                 {m.title}
                             </Link>    
                         ) : (
-                            <Menu  openDelay={100} closeDelay={100} offset={0} width={180}>
+                            <Menu trigger='hover' openDelay={100} closeDelay={100} offset={0} width={180}>
                                 <Menu.Target>
                                     <Link to={m.path} className='menu-item'>
                                         {m.title}
