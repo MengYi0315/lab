@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import _ from "lodash";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { handleError } from "../utils/error";
@@ -14,7 +15,7 @@ function* GET_TestDataEffect({payload}) {
         const response = yield call (GET_TestData, payload);
         yield put ({ type: "SAVE_TestData", payload: response });
     } catch (err) {
-        console.Consolelog(err);
+        console.log(err);
     }
 }
 

@@ -1,4 +1,6 @@
 @import '@mantine/core/styles.css';
+@import './mixin//margin.scss';
+@import './mixin/padding.scss';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

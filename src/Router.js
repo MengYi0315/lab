@@ -1,8 +1,9 @@
-import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Layout from "./layouts/Layout";
 
 import Home from "./Pages/01Home/Home";
+import News from "./Pages/01Home/0101News/News";
 import Professor from "./Pages/02Professor/Professor";
 import Award from "./Pages/03Achievement/0301Award/Award";
 import Topic from "./Pages/03Achievement/0302Topic/Topic";
@@ -18,76 +19,35 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // handle: {
-        //   crumb: () => <Link to="/Home">首頁</Link>,
-        // },
       },
-      {
-        path: "Home",
+      { 
+        path: "/home",
         element: <Home />,
-        // handle: {
-        //   crumb: () => <Link to="/Home">首頁</Link>,
-        // },
       },
       {
-        path: "Professor",
+        path: "/news/:id",
+        element: <News />,
+      },
+      {
+        path: "professor",
         element: <Professor />,
-        // handle: {
-        //   crumb: () => <Link to="/Professor">教授</Link>,
-        // },
       },
       {
-        path: "Achievement/Award",
+        path: "achievement/award",
         element: <Award />,
-        // handle: {
-        //   crumb: () => <Link to="/Professor">教授</Link>,
-        // },
       },
       {
-        path: "Achievement/Topic",
+        path: "achievement/topic",
         element: <Topic />,
-        // handle: {
-        //   crumb: () => <Link to="/Professor">教授</Link>,
-        // },
       },
       {
-        path: "Activity",
+        path: "activity",
         element: <Activity />,
-        // handle: {
-        //   crumb: () => <Link to="/Professor">教授</Link>,
-        // },
       },
       {
-        path: "Auth/Login",
+        path: "auth/login",
         element: <Login />,
-        // handle: {
-        //   crumb: () => <Link to="/Professor">教授</Link>,
-        // },
       },
-      
-      // {
-      //   path: "help",
-      //   element: <HelpLayout />,
-      //   handle: {
-      //     crumb: () => <Link to="/help">幫助</Link>,
-      //   },
-      //   children: [
-      //     {
-      //       path: "faq",
-      //       element: <FAQ />,
-      //       handle: {
-      //         crumb: () => <Link to="help/faq">問答集</Link>,
-      //       },
-      //     },
-      //     {
-      //       path: "contact",
-      //       element: <Contact />,
-      //       handle: {
-      //         crumb: () => <Link to="help/contact">聯繫我們</Link>,
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
 ]);

@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
 import _ from 'lodash';
+import moment from 'moment';
+import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Carousel } from '@mantine/carousel';
+import { Carousel, CarouselSlide } from '@mantine/carousel';
 import { Flex, Grid, Space, Text, Pagination, Center } from '@mantine/core';
 import "../01Home/Home.scss";
 
@@ -11,24 +13,33 @@ import carousel2 from "../../assets/carousel/2.png";
 import carousel3 from "../../assets/carousel/3.png";
 import { connect } from 'react-redux';
 
-const Home = (props) => {
-    const news = [
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
-        {title:"this is a news...", content:"this is content...", date:"2024/01/01"}, 
+const news = [
+    {id: "1", title:"1. this is a news...", content:"1. this is content...", date:"2024/01/01"}, 
+    {id: "2", title:"2. this is a news...", content:"2. this is content...", date:"2024/01/02"}, 
+    {id: "3", title:"3. this is a news...", content:"3. this is content...", date:"2024/01/03"}, 
+    {id: "4", title:"4. this is a news...", content:"4. this is content...", date:"2024/01/04"}, 
+    {id: "5", title:"5. this is a news...", content:"5. this is content...", date:"2024/01/05"}, 
+    {id: "6", title:"6. this is a news...", content:"6. this is content...", date:"2024/01/06"}, 
+    {id: "7", title:"7. this is a news...", content:"7. this is content...", date:"2024/01/07"}, 
+    {id: "8", title:"8. this is a news...", content:"8. this is content...", date:"2024/01/08"}, 
 
-    ];
+];
+
+const Home = (props) => {
 
     // const { newsdata, carouseldata } = props;
-    const [activePage, setActivitePage] = useState(1);
+    const [activePage, setActivitePage] = useState(1);    
+    const newsData = _.map(news, (initialNews) => ({
+        ...initialNews, 
+        year: moment(initialNews.date).format('YYYY'), 
+        month: moment(initialNews.date).format('MM'), 
+        day: moment(initialNews.date).format('DD'), 
+    }));
+    console.log('test', newsData)
+
     const itemPage = 5;
-    const maxPage = _.ceil(news.length / itemPage);
-    const paginatedData = _.chunk(news, itemPage);
+    const maxPage = _.ceil(newsData.length / itemPage);
+    const paginatedData = _.chunk(newsData, itemPage);
     
     const setPage = (page) => {
         setActivitePage(page);
@@ -36,9 +47,10 @@ const Home = (props) => {
     // console.log('page data', paginatedData)
 
     useEffect(() => {
-        props.GET_TestData();
     }, []);
     console.log(props);
+
+
     
 
     return (
@@ -47,41 +59,50 @@ const Home = (props) => {
                 className='carousel'
                 align={'start'}
                 draggable
-                height={600}
+                // height={600}
                 slideGap="md"
                 withIndicators
             >
+                {/* <Carousel.Slide>
+
+                </Carousel.Slide> */}
                 <Carousel.Slide>
-                    <img src={carousel1} style={{width:'100%'}}></img>
+                    <img src={carousel1} className='carouselImg'></img>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                    <img src={carousel2} style={{width:'100%'}}></img>
+                    <img src={carousel2} className='carouselImg'></img>
                 </Carousel.Slide>
                 <Carousel.Slide>
-                    <img src={carousel3} style={{width:'100%'}}></img>
+                    <img src={carousel3} className='carouselImg'></img>
                 </Carousel.Slide>
             </Carousel>
-            <Space h='md' />
+
+            <div className='title'>
+                最新消息
+            </div>
             <Flex
-                gap={'md'}
+                // gap={'md'}
                 justify={'start'}
                 align={'center'}
                 direction={'column'}
-                style={{width:'100%'}}
+                style={{width:'80vw'}}
             >
                 {_.map(paginatedData[activePage - 1], (news, index) => (
-                    <Grid gutter={'md'} style={{width:'100%'}} key={index}>
-                        <Grid.Col span={10}>
-                            <Text fw={500}>
+                    <Link to={`/news/${news.id}`} className="link">
+                        <div className='news-item'>
+                            <div className='date-div'>
+                                <div className='year'>
+                                    {news.year}
+                                </div>
+                                <div className='date'>
+                                    {news.month}.{news.day}
+                                </div>
+                            </div>
+                            <div className='text-div'>
                                 {news.title}
-                            </Text>
-                        </Grid.Col>
-                        <Grid.Col span={2}>
-                            <Text ta={'right'}>
-                                {news.date}
-                            </Text>
-                        </Grid.Col>
-                    </Grid>                    
+                            </div>
+                        </div>
+                    </Link>
                 ))}
             </Flex>
             <Center>
@@ -93,15 +114,15 @@ const Home = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        GetTestData: _.get(state, "Lab01.TestData", []), 
+        // GetTestData: _.get(state, "Lab01.TestData", []), 
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        GET_TestData(payload, callback, loading) {
-            dispatch({type: "GET_TestData", payload, callback, loading});
-        }, 
+        // GET_TestData(payload, callback, loading) {
+        //     dispatch({type: "GET_TestData", payload, callback, loading});
+        // }, 
     };
 };
 

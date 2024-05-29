@@ -2,7 +2,76 @@
 
 #Home {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .carousel {
         width: 100%;
+        height: calc(100vh - 80px);
+
+        .carouselImg {
+            width: 100%;
+            height: calc(100vh - 80px);
+            object-fit: cover;
+
+        }
+    }
+
+    .title {
+        width: 80vw;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 50px;
+        padding: 20px 8px;
+    }
+
+    .link {
+        text-decoration: none;
+        list-style: none;
+        width: 100%;
+        padding: 8px 20px;
+        color: #1F0737;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        .news-item {
+            display: flex;
+            width: 100%;
+            height: 100px;
+
+            .date-div {
+                width: 100px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .year {
+                    height: 30px;
+                    font-size: 20px;
+                }
+
+                .date {
+                    height: 70px;
+                    line-height: 70px;
+                    font-size: 35px;
+                    font-weight: bold;
+                }
+            }
+
+            .text-div {
+                width: calc(100% - 120px);
+                height: 100%;
+                margin-left: 20px;
+                display: flex;
+                align-items: center;
+                font-size: 25px;
+            }
+        }
+
+        &:hover {
+            color: #10307e;
+            background-color: #edf6ff;
+        }
     }
 }
