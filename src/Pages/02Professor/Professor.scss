@@ -1,9 +1,45 @@
 #Professor {
-    width: 100%;
-    .title {
-        text-align: start;
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px 100px;
+
     
+    .introduction-div {
+        margin: 20px 10vw 50px;
+
+        .text-div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #050718;
+            // margin-left: ;
+
+            .ch, .en {
+                color: #155484;
+                font-weight: bold;
+                // text-shadow: 1px 1px 1px #ebedff;
+            }
+
+            .ch {
+                font-size: 35px;
+            }
+
+            .en {
+                font-size: 20px;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .text {
+                font-size: 18px;
+                color: #050718;
+            }
+            
+        } 
+    }
 }

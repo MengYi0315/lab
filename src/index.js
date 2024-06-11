@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './index.scss';
+import 'aos/dist/aos.css';
 import RouterApp from './Router';
 
 import store from "./store";

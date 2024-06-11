@@ -2,6 +2,7 @@
 
 #Home {
     width: 100%;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,9 +22,14 @@
     .title {
         width: 80vw;
         font-size: 30px;
-        font-weight: bold;
+        color: #155484;
         margin-top: 50px;
         padding: 20px 8px;
+
+        .en-title {
+            font-size: 25px;
+            margin-left: 10px;
+        }
     }
 
     .link {
@@ -31,8 +37,9 @@
         list-style: none;
         width: 100%;
         padding: 8px 20px;
-        color: #1F0737;
+        color: #050718;
         transition: background-color 0.3s ease, color 0.3s ease;
+        border-bottom: 2px solid #ccd2df;
 
         .news-item {
             display: flex;
@@ -62,7 +69,7 @@
             .text-div {
                 width: calc(100% - 120px);
                 height: 100%;
-                margin-left: 20px;
+                margin-left: 50px;
                 display: flex;
                 align-items: center;
                 font-size: 25px;
@@ -73,5 +80,24 @@
             color: #10307e;
             background-color: #edf6ff;
         }
+    }
+}
+
+.mantine-Pagination-control {
+    color: #fff;
+    background-color: #155484;
+    border: #155484 1px solid;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        color: #050718;
+        background-color: #edf6ff;
+    }
+
+    &[data-active] {
+        color: #fff;
+        background-color: #8cc3ed;
+        border: #8cc3ed 1px solid;
+
     }
 }

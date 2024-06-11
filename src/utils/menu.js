@@ -31,9 +31,9 @@ export default [
         title: "活動紀錄", 
         useable: false, 
     }, 
-    {
-        path: "/auth/login", 
-        title: "登入", 
-        useable: false, 
-    }, 
+    // {
+    //     path: "/auth/login", 
+    //     title: "登入", 
+    //     useable: false, 
+    // }, 
 ];

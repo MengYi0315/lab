@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { useEffect, useState } from "react";
 import { 
     Card,
     Flex, 
@@ -11,8 +12,9 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { connect } from "react-redux";
+import PageBanner from "../../components/pageBanner";
 import "../04Activity/Activity.scss";
-import { useState } from "react";
+
 
 
 const Activity = (props) => {
@@ -50,12 +52,18 @@ const Activity = (props) => {
         setActivitePage(page);
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     
 
 
     return (
         <div id="Activity">
-            <Title className="title">Activity</Title>
+            <PageBanner 
+                pathname={window.location.pathname}
+            />
             <Modal 
                 
                 opened={opened} 

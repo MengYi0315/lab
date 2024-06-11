@@ -1,12 +1,20 @@
 import _ from "lodash";
 import { Title } from "@mantine/core";
 import { connect } from "react-redux";
+import PageBanner from "../../../components/pageBanner";
 import "../0301Award/Award.scss";
+import { useEffect } from "react";
 
 const Award = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div id="Award">
-            <Title className="title">Award</Title>
+            <PageBanner 
+                pathname={window.location.pathname}
+            />
         </div>
     )
 }

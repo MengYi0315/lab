@@ -7,7 +7,7 @@
     align-items: center;
     background-color: #fff;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
 
 
     .menu {
@@ -40,11 +40,13 @@
     }
 }
 
-.mantine-Menu-item{
-
+.mantine-Menu-item {
+    background-color: #fff;
+    color: #1F0737; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &[data-hovered]{
-        background-color: #ebedff;
         color: #10307e;
+        background-color: #ebedff;
     }
 }

@@ -26,7 +26,17 @@ const Header = (props) => {
                                 {m.title}
                             </Link>    
                         ) : (
-                            <Menu trigger='hover' openDelay={100} closeDelay={100} offset={0} width={180}>
+                            <Menu 
+                                trigger='hover' 
+                                openDelay={100} 
+                                closeDelay={100} 
+                                offset={0} 
+                                width={180}
+                                transitionProps={{
+                                    transition: 'scale-y', 
+                                    duration: 300,  
+                                }}
+                            >
                                 <Menu.Target>
                                     <Link to={m.path} className='menu-item'>
                                         {m.title}
@@ -47,13 +57,12 @@ const Header = (props) => {
                                             href={c.path}
                                             styles={{ 
                                                 item: {
-                                                    padding: '10px', 
+                                                    padding: '12px 10px', 
                                                 },
                                                 itemLabel: {
                                                     textDecoration: 'none', 
                                                     fontSize: '16px', 
                                                     fontWeight: 'bold', 
-                                                    color: '#1F0737', 
                                                 }, 
                                                 
                                             }}
