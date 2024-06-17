@@ -42,6 +42,11 @@ const Topic = (props) => {
                             onClick={() => {
                                 setSelectYear(data.yearNumber)
                             }}
+                            styles={{
+                                tab: {
+                                    padding: '15px 20px',
+                                }
+                            }}
                         >
                             <Text fw={500}>{data.year}</Text>    
                         </Tabs.Tab>
@@ -57,9 +62,7 @@ const Topic = (props) => {
                             withBorder
                             style={{margin:'20px 0'}}
                         >
-                            <Flex 
-                            
-                            >
+                            <div className="content-div">
                                 <Image
                                     src={item.photo}
                                     w={500}
@@ -67,11 +70,8 @@ const Topic = (props) => {
                                     style={{margin:'0 20px'}}
 
                                 />
-                                <Stack
-                                    align="flex-start"
-                                    justify="flex-start"
-                                    style={{margin:'0 20px', width:'100%'}}
-                                >
+
+                                <div className="text-div">
                                     <Title order={3}>{item.title}</Title>
                                     <Text c='dimmed'>
                                         {_.map(item.partner, (partner) => (
@@ -87,6 +87,20 @@ const Topic = (props) => {
                                         ))}
                                         {/* {item.introduction} */}
                                     </Text>
+                                </div>
+
+
+
+                            </div>
+                            <Flex 
+                            
+                            >
+                                <Stack
+                                    align="flex-start"
+                                    justify="flex-start"
+                                    style={{margin:'0 20px', width:'100%'}}
+                                >
+
                                 </Stack>
                             </Flex>
                         </Card>

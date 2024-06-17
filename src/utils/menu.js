@@ -15,12 +15,12 @@ export default [
         useable: false, 
         children: [
             { 
-                path: "/achievement/award", 
+                path: "/lab/achievement/award", 
                 title: "歷屆榮耀", 
                 useable: false,
             }, 
             { 
-                path: "/achievement/topic", 
+                path: "/lab/achievement/topic", 
                 title: "專題作品", 
                 useable: false,
             }, 

@@ -13,31 +13,31 @@ import '../../mixin/animista.scss';
 
 const allBannerData = [
     {
-        path: '/professor', 
+        path: '/lab/professor', 
         title: '教授介紹', 
         enTitle: 'Professor', 
         img: professorImg,
     },
     {
-        path: '/achievement/award', 
+        path: '/lab/achievement/award', 
         title: '歷屆榮耀', 
         enTitle: 'Award', 
         img: awardImg,
     },
     {
-        path: '/achievement/topic', 
+        path: '/lab/achievement/topic', 
         title: '專題作品', 
         enTitle: 'Topic', 
         img: topicImg,
     },
     {
-        path: '/activity', 
+        path: '/lab/activity', 
         title: '活動紀錄', 
         enTitle: 'Activity', 
         img: activityImg,
     },
     {
-        path: '/news', 
+        path: '/lab/news', 
         title: '最新消息', 
         enTitle: 'News', 
         img: newsImg,

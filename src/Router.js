@@ -11,48 +11,54 @@ import Activity from "./Pages/04Activity/Activity";
 
 import Login from './Pages/Auth/Login';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        { 
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/news/:id",
+          element: <News />,
+        },
+        {
+          path: "professor",
+          element: <Professor />,
+        },
+        {
+          path: "achievement/award",
+          element: <Award />,
+        },
+        {
+          path: "achievement/topic",
+          element: <Topic />,
+        },
+        {
+          path: "activity",
+          element: <Activity />,
+        },
+        {
+          path: "auth/login",
+          element: <Login />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      { 
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/news/:id",
-        element: <News />,
-      },
-      {
-        path: "professor",
-        element: <Professor />,
-      },
-      {
-        path: "achievement/award",
-        element: <Award />,
-      },
-      {
-        path: "achievement/topic",
-        element: <Topic />,
-      },
-      {
-        path: "activity",
-        element: <Activity />,
-      },
-      {
-        path: "auth/login",
-        element: <Login />,
-      },
-    ],
-  },
-]);
+    basename: "/lab",
+  }
+);
+
 
 
 export default function App() {
-  return <RouterProvider router={router} basename="/lab" />;
+  return <RouterProvider router={router}/>;
 }

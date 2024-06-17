@@ -1,8 +1,17 @@
 #Topic {
     margin: 0 20px 100px;
-    .title {
-        text-align: start;
-        margin-top: 10px;
-        margin-bottom: 50px;
+
+    .content-div {
+        display: flex;
+        
+
+        .text-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            margin: 0 20px;
+        }
     }
 }

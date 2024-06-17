@@ -20,7 +20,7 @@ const News = (props) => {
     const searchNews = _.filter(news, ['id', searchId]);
     console.log('id', searchId)
     console.log('search news', searchNews)
-    console.log(window.location.pathname.match(/^\/news/)[0])
+    console.log(window.location.pathname.match(/^\/[^/]+\/[^/]+/)[0])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,7 +34,7 @@ const News = (props) => {
     return (
         <div id="News">    
             <PageBanner
-                pathname={window.location.pathname.match(/^\/news/)[0]}
+                pathname={window.location.pathname.match(/^\/[^/]+\/[^/]+/)[0]}
             />
 
 

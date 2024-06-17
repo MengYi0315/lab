@@ -2,9 +2,7 @@ import _ from "lodash";
 import { useEffect, useState } from "react";
 import { 
     Card,
-    Flex, 
     Image, 
-    Title, 
     Text, 
     Pagination, 
     Center,
@@ -12,77 +10,55 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { connect } from "react-redux";
+import Aos from "aos";
 import PageBanner from "../../components/pageBanner";
+import activityData from "../../data/activity.json";
 import "../04Activity/Activity.scss";
 
 
 
 const Activity = (props) => {
-    const data = [
-        {title:"1", photo:["a", "b", "c"]},
-        {title:"2", photo:["a", "b", "c"]},
-        {title:"3", photo:["a", "b", "c"]},
-        {title:"4", photo:["a", "b", "c"]},
-        {title:"5", photo:["a", "b", "c"]},
-        {title:"6", photo:["a", "b", "c"]},
-        {title:"7", photo:["a", "b", "c"]},
-        {title:"8", photo:["a", "b", "c"]},
-        {title:"9", photo:["a", "b", "c"]},
-        {title:"10", photo:["a", "b", "c"]},
-        {title:"12", photo:["a", "b", "c"]},
-        {title:"12", photo:["a", "b", "c"]},
-        {title:"13", photo:["a", "b", "c"]},
-        {title:"14", photo:["a", "b", "c"]},
-        {title:"15", photo:["a", "b", "c"]},
-        {title:"16", photo:["a", "b", "c"]},
-        {title:"17", photo:["a", "b", "c"]},
-        {title:"18", photo:["a", "b", "c"]},
-
-    ];
-
     //Page相關
-    const [activePage, setActivitePage] = useState(1);
+    const [activePage, setActivePage] = useState(1);
     const itemsPage = 12;
-    const maxPage = _.ceil(data.length / itemsPage);
-    const paginatedData = _.chunk(data, itemsPage);
+    const maxPage = _.ceil(activityData.length / itemsPage);
+    const paginatedData = _.chunk(activityData, itemsPage);
     //modal
     const [opened, { open, close }] = useDisclosure(false);
+    console.log(window)
 
     const setPage = (page) => {
-        setActivitePage(page);
+        setActivePage(page);
     };
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        Aos.init();
     }, []);
 
-    
-
+    useEffect(() => {
+        console.log(window.innerWidth)
+    }, [window.innerWidth])
 
     return (
         <div id="Activity">
             <PageBanner 
                 pathname={window.location.pathname}
             />
-            <Modal 
+            {/* <Modal 
                 
                 opened={opened} 
                 onClose={close} 
                 title="Activity" 
                 centered
-                            
             >
                 <Image
                     src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
                 />
                 123456
-            </Modal>
+            </Modal> */}
             
-            <Flex
-                justify={"flex-start"}
-                wrap={"wrap"}
-                style={{marginBottom:'10px'}}
-            >
+            <div className="activity-div" data-aos="fade-up">
                 {_.map(paginatedData[activePage - 1], (data, index)=> (
                     <>
                         {/* <Modal 
@@ -105,26 +81,26 @@ const Activity = (props) => {
                             radius="md" 
                             withBorder 
                             onClick={open}
-                            className="photoDiv"
+                            className="photo-div"
                         >
                             <Card.Section>
                                 <Image
-                                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                                    src={data.photo}
                                     height={200}
                                 />
                             </Card.Section>
-                            <Text fw={500} size="lg" mt="md">
-                                {data.title}
-                            </Text>
-                            <Text mt="xs" c="dimmed" size="sm">
-                                this is a activity and i don't know to talk about...more more more more
-                            </Text>
-                        </Card>
 
+                            <text className="title mt-16">{data.title}</text>
+                            <text className="date">{data.date}</text>
+                            <text className="content mt-16">{data.content}</text>
+                        
+                        </Card>
                     </>
                 ))}
-            </Flex>
-            <Center>
+
+            </div>
+
+            <Center className="mt-20" data-aos="fade-up">
                 <Pagination total={maxPage} value={activePage} onChange={setPage} siblings={1} />
             </Center>
         </div>
