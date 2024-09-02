@@ -13,31 +13,31 @@ import '../../mixin/animista.scss';
 
 const allBannerData = [
     {
-        path: '/lab/professor', 
+        path: 'professor', 
         title: '教授介紹', 
         enTitle: 'Professor', 
         img: professorImg,
     },
     {
-        path: '/lab/achievement/award', 
+        path: 'award', 
         title: '歷屆榮耀', 
         enTitle: 'Award', 
         img: awardImg,
     },
     {
-        path: '/lab/achievement/topic', 
+        path: 'topic', 
         title: '專題作品', 
         enTitle: 'Topic', 
         img: topicImg,
     },
     {
-        path: '/lab/activity', 
+        path: 'activity', 
         title: '活動紀錄', 
         enTitle: 'Activity', 
         img: activityImg,
     },
     {
-        path: '/lab/news', 
+        path: 'news', 
         title: '最新消息', 
         enTitle: 'News', 
         img: newsImg,
@@ -48,7 +48,7 @@ const PageBanner = (props) => {
     console.log('banner props',props)
 
     const bannerData = _.find(allBannerData, { 'path': props.pathname })
-    console.log('bannerData', bannerData)
+    // console.log('bannerData', bannerData)
 
     return (
         <div id="pageBanner">

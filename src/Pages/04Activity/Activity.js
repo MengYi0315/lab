@@ -43,7 +43,7 @@ const Activity = (props) => {
     return (
         <div id="Activity">
             <PageBanner 
-                pathname={window.location.pathname}
+                pathname={'activity'}
             />
             {/* <Modal 
                 
@@ -90,14 +90,13 @@ const Activity = (props) => {
                                 />
                             </Card.Section>
 
-                            <text className="title mt-16">{data.title}</text>
-                            <text className="date">{data.date}</text>
-                            <text className="content mt-16">{data.content}</text>
+                            <span className="title mt-16">{data.title}</span>
+                            <span className="date">{data.date}</span>
+                            <span className="content mt-16">{data.content}</span>
                         
                         </Card>
                     </>
                 ))}
-
             </div>
 
             <Center className="mt-20" data-aos="fade-up">

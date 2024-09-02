@@ -8,10 +8,69 @@
         .text-div {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            margin: 0 20px;
+            margin: 0 0 0 40px;
+            color: #050718;
+
+            .title-div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+                gap: 10px;
+                margin-bottom: 10px;
+                color: #155484;
+
+                .title {
+                    font-size: 30px;
+                    font-weight: 600;
+                
+                }
+
+                .year {
+                    font-size: 18px;
+                    margin-bottom: 3px;
+                }
+    
+            }
+
+            .partner-div {
+                margin-bottom: 20px;
+
+                .partner {
+                    font-size: 14px;
+                    color: #155484;
+                    background-color: #e8ecf3;
+                    padding: 4px 12px;
+                    margin-right: 10px;
+                    border-radius: 20px;
+                }
+            }
+
+            .text {
+                text-align: justify;
+                // \n斷行
+                white-space: pre-line;
+                margin-bottom: 40px;
+            }
+
         }
+    }
+}
+
+.m_539e827b {
+    color: #050718;
+    border-color: #dee2e6;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+        color: #155484;
+        background-color: #edf6ff;
+        
+        // transition: background-color 0.2s ease;;
+    }
+
+    &[data-active] {
+        border-color: #155484;
     }
 }

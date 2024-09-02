@@ -16,7 +16,7 @@ const Professor = (props) => {
     return (
         <div id="Professor">
             <PageBanner
-                pathname={window.location.pathname}
+                pathname={'professor'}
             />
 
             <Grid className="introduction-div" data-aos="fade-up">

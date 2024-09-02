@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { useState, useEffect } from "react";
-import { Title, Card, Flex, Image, Stack, Text, Tabs } from "@mantine/core";
+import { Card, Image, Tabs } from "@mantine/core";
 import { connect } from "react-redux";
 import Aos from "aos";
 import PageBanner from "../../../components/pageBanner";
@@ -8,12 +8,12 @@ import data from '../../../data/topic.json';
 import "../0302Topic/Topic.scss";
 
 const yearData = [
-    {yearNumber:'107', year:'107年'},
-    {yearNumber:'108', year:'108年'}, 
-    {yearNumber:'109', year:'109年'}, 
-    {yearNumber:'110', year:'110年'}, 
-    {yearNumber:'111', year:'111年'}, 
-    {yearNumber:'112', year:'112年'}, 
+    { year:'2018' },
+    { year:'2019' }, 
+    { year:'2020' }, 
+    { year:'2021' }, 
+    { year:'2022' }, 
+    { year:'2023' }, 
 ];
 
 const Topic = (props) => {
@@ -23,32 +23,32 @@ const Topic = (props) => {
     }, []);
 
 
-    const [selectYear, setSelectYear] = useState('107');
+    const [selectYear, setSelectYear] = useState('2018');
 
-    console.log('select year', selectYear);
-    console.log('select year data', _.filter(data, {'year': selectYear}));
     return (
         <div id="Topic">
             <PageBanner 
-                pathname={window.location.pathname}
+                pathname={'topic'}
             />
             
-            <Tabs defaultValue="107" data-aos="fade-up">
+            <Tabs defaultValue="2018" data-aos="fade-up">
                 <Tabs.List>
-                    {_.map(yearData, (data) => (
+                    {_.map(yearData, (y) => (
                         <Tabs.Tab 
-                            key={data.yearNumber}
-                            value={data.yearNumber}
+                            key={y.year}
+                            value={y.year}
                             onClick={() => {
-                                setSelectYear(data.yearNumber)
+                                setSelectYear(y.year)
                             }}
                             styles={{
                                 tab: {
-                                    padding: '15px 20px',
+                                    padding: '20px 25px',
+                                    fontSize: '16px',
+                                    fontWeight: '500',
                                 }
                             }}
                         >
-                            <Text fw={500}>{data.year}</Text>    
+                            <span>{y.year}年</span>    
                         </Tabs.Tab>
                     ))}
                 </Tabs.List>
@@ -60,55 +60,54 @@ const Topic = (props) => {
                             padding="lg" 
                             radius="md" 
                             withBorder
-                            style={{margin:'20px 0'}}
+                            styles={{
+                                root: {
+                                    borderRadius: '0px', 
+                                    borderTop: '2px solid #ccd2df',
+                                    borderBottom: '2px solid #ccd2df',
+                                    borderRight: '0px', 
+                                    borderLeft: '0px', 
+                                    boxShadow: '0px 1px 8px 0px #ccd2df',
+                                }
+                            }}
+                            style={{
+                                margin:'30px 0',
+                            }}
                         >
                             <div className="content-div">
-                                <Image
-                                    src={item.photo}
-                                    w={500}
-                                    h={500}
-                                    style={{margin:'0 20px'}}
-
-                                />
-
-                                <div className="text-div">
-                                    <Title order={3}>{item.title}</Title>
-                                    <Text c='dimmed'>
-                                        {_.map(item.partner, (partner) => (
-                                            partner + "　"
-                                        ))}
-                                    </Text>
-                                    <Text style={{textAlign:'justify'}}>
-                                        {_.map(item.introduction, (item) => (
-                                            <>
-                                                　　{item}<br />
-                                            </>
-                                            
-                                        ))}
-                                        {/* {item.introduction} */}
-                                    </Text>
+                                <div style={{
+                                    display: 'flex', 
+                                    alignItems: 'flex-start',
+                                }}>
+                                    <Image
+                                        src={item.photo}
+                                        alt={`${item.title} photo`}
+                                        w={500}
+                                        h={500}
+                                    />
                                 </div>
 
-
-
-                            </div>
-                            <Flex 
-                            
-                            >
-                                <Stack
-                                    align="flex-start"
-                                    justify="flex-start"
-                                    style={{margin:'0 20px', width:'100%'}}
-                                >
-
-                                </Stack>
-                            </Flex>
+                                <div className="text-div">
+                                    <div className="title-div">
+                                        <span className="title">{item.title}</span>
+                                        <span className="year">{item.year}年</span>
+                                    </div>
+                                    <div className="partner-div">
+                                        {_.map(item.partner, (partner) => (
+                                            <span className="partner">
+                                                {partner}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <span className="text">
+                                        {item.introduction}
+                                    </span>
+                                </div>
+                            </div>  
                         </Card>
                     </Tabs.Panel>
                 ))}
-                
             </Tabs>
-            
         </div>
     )
 }

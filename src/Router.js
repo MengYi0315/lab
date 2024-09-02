@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 
 import Layout from "./layouts/Layout";
 
@@ -11,7 +11,7 @@ import Activity from "./Pages/04Activity/Activity";
 
 import Login from './Pages/Auth/Login';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/",
@@ -22,11 +22,11 @@ const router = createBrowserRouter(
           element: <Home />,
         },
         { 
-          path: "/home",
+          path: "home",
           element: <Home />,
         },
         {
-          path: "/news/:id",
+          path: "news/:id",
           element: <News />,
         },
         {
@@ -52,9 +52,9 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: "/lab",
-  }
+  // {
+  //   basename: "/lab",
+  // }
 );
 
 

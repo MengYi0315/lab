@@ -35,6 +35,7 @@ const Home = (props) => {
         day: moment(initialNews.date).format('DD'), 
     }));
     console.log('test', newsData)
+    console.log(window.location.pathname, '123')
 
     const itemPage = 5;
     const maxPage = _.ceil(newsData.length / itemPage);
