@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lab/static/css/main.d00aa4e5.css",
-    "main.js": "/lab/static/js/main.1867ad2d.js",
+    "main.css": "/lab/static/css/main.e91a55ed.css",
+    "main.js": "/lab/static/js/main.0beacf4c.js",
     "static/media/2.png": "/lab/static/media/2.f2189b2a8d418c57abaa.png",
     "static/media/1.png": "/lab/static/media/1.e700fde14ee16be64b92.png",
     "static/media/award.jpg": "/lab/static/media/award.7eeb0e6c039903b8aeca.jpg",
@@ -15,7 +15,7 @@
     "index.html": "/lab/index.html"
   },
   "entrypoints": [
-    "static/css/main.d00aa4e5.css",
-    "static/js/main.1867ad2d.js"
+    "static/css/main.e91a55ed.css",
+    "static/js/main.0beacf4c.js"
   ]
 }
