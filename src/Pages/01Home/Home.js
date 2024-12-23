@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Aos from 'aos';
 import { Carousel, CarouselSlide } from '@mantine/carousel';
-import { Flex, Grid, Space, Text, Pagination, Center } from '@mantine/core';
+import { Flex, Space, Text, Pagination, Center } from '@mantine/core';
 import "../01Home/Home.scss";
 import news from '../../data/news.json';
 import carousel1 from "../../assets/carousel/1.png";
