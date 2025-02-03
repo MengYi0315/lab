@@ -11,7 +11,8 @@ import Activity from "./Pages/04Activity/Activity";
 
 import Login from './Pages/Auth/Login';
 
-const router = createHashRouter(
+// createBrowserRouter
+const router = createBrowserRouter(
   [
     {
       path: "/",
@@ -52,12 +53,57 @@ const router = createHashRouter(
       ],
     },
   ],
-  // {
-  //   basename: "/lab",
-  // }
+  {
+    basename: "/lab",
+  }
 );
 
-
+// createHashRouter(部屬到gitHub Pages用)
+// const router = createHashRouter(
+//   [
+//     {
+//       path: "/",
+//       element: <Layout />,
+//       children: [
+//         {
+//           path: "/",
+//           element: <Home />,
+//         },
+//         { 
+//           path: "home",
+//           element: <Home />,
+//         },
+//         {
+//           path: "news/:id",
+//           element: <News />,
+//         },
+//         {
+//           path: "professor",
+//           element: <Professor />,
+//         },
+//         {
+//           path: "achievement/award",
+//           element: <Award />,
+//         },
+//         {
+//           path: "achievement/topic",
+//           element: <Topic />,
+//         },
+//         {
+//           path: "activity",
+//           element: <Activity />,
+//         },
+//         {
+//           path: "auth/login",
+//           element: <Login />,
+//         },
+//       ],
+//     },
+//   ],
+//   {
+//     basename: "/lab",
+//   }
+// );
 
 export default function App() {
   return <RouterProvider router={router}/>;
