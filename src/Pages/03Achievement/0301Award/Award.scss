@@ -1,32 +1,38 @@
 #Award {
-    margin: 0 20px 100px;
-    color: #050718;
+  margin: 0 20px 100px;
+  color: #050718;
 
-    .btn {
-        font-weight: bold;
-        padding: 5px 10px;
+  .btn {
+    font-weight: bold;
+    padding: 5px 10px;
 
-        .icon {
-            margin-right: 10px;
-            font-size: 18px;
-        }
+    .icon {
+      margin-right: 10px;
+      font-size: 18px;
     }
+  }
 
-    .table {
-        margin-top: 30px;
+  .table {
+    margin-top: 30px;
 
-        .head {
-            font-size: 18px;
-            color: #155484;
-        }
+    .head {
+      font-size: 18px;
+      color: #155484;
     }
+  }
+
+  .search-div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
 }
 
 .mantine-SegmentedControl-label {
-    color: #155484;
+  color: #155484;
 
-    &:where(:not([data-disabled], [data-active], [data-read-only])):hover {
-        color: #050718;
-    }
+  &:where(:not([data-disabled], [data-active], [data-read-only])):hover {
+    color: #050718;
+  }
 }
 

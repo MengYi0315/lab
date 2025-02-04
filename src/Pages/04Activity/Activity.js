@@ -61,19 +61,19 @@ const Activity = (props) => {
       <div className="activity-div" data-aos="fade-up">
         {_.map(paginatedData[activePage - 1], (item, index)=> (
           <>
-                {/* <Modal 
-                  key={index} 
-                  opened={opened} 
-                  onClose={close} 
-                  title="Activity" 
-                  centered
-                    
-                >
-                    <Image
-                        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                        
-                    />
-                </Modal> */}
+              {/* <Modal 
+                key={index} 
+                opened={opened} 
+                onClose={close} 
+                title="Activity" 
+                centered
+                  
+              >
+                  <Image
+                      src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                      
+                  />
+              </Modal> */}
             <Card 
               key={index} 
               shadow="sm" 

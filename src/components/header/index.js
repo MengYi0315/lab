@@ -11,12 +11,12 @@ const Header = (props) => {
   return (
     <div id="header">
       <div className='logo-div ml-20'>
-          <Image 
-            h={50}
-            w="auto"
-            radius={"md"}
-            src={logo}
-          />
+        <Image 
+          h={50}
+          w="auto"
+          radius={"md"}
+          src={logo}
+        />
       </div>
       <div className='menu'>
         {_.map(props.menu, (m) => (
@@ -37,39 +37,39 @@ const Header = (props) => {
                   duration: 300,  
                 }}
               >
-                  <Menu.Target>
-                    <Link to={m.path} className='menu-item'>
-                      {m.title}
-                    </Link>
-                  </Menu.Target>
-                  <Menu.Dropdown
-                    styles={{
-                      dropdown: { 
-                        border: '#ebedf1 1px solid', 
-                        borderRadius: '0px', 
-                        padding: '0px', 
-                      }, 
-                    }}    
-                  >
-                    {_.map(m.children, (c) => (
-                      <Menu.Item
-                        component='a'
-                        href={c.path}
-                        styles={{ 
-                            item: {
-                                padding: '12px 10px', 
-                            },
-                            itemLabel: {
-                                textDecoration: 'none', 
-                                fontSize: '16px', 
-                                fontWeight: 'bold', 
-                            }, 
-                            
-                        }}
-                      >
-                        {c.title}
-                      </Menu.Item>
-                    ))}
+                <Menu.Target>
+                  <Link to={m.path} className='menu-item'>
+                    {m.title}
+                  </Link>
+                </Menu.Target>
+                <Menu.Dropdown
+                  styles={{
+                    dropdown: { 
+                      border: '#ebedf1 1px solid', 
+                      borderRadius: '0px', 
+                      padding: '0px', 
+                    }, 
+                  }}    
+                >
+                  {_.map(m.children, (c) => (
+                    <Menu.Item
+                      component='a'
+                      href={c.path}
+                      styles={{ 
+                          item: {
+                              padding: '12px 10px', 
+                          },
+                          itemLabel: {
+                              textDecoration: 'none', 
+                              fontSize: '16px', 
+                              fontWeight: 'bold', 
+                          }, 
+                          
+                      }}
+                    >
+                      {c.title}
+                    </Menu.Item>
+                  ))}
                 </Menu.Dropdown>
               </Menu>
             )}

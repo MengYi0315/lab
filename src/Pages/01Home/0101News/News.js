@@ -15,67 +15,67 @@ import "../0101News/News.scss";
 
 
 const News = (props) => {
-    console.log('news', news)
-    // const searchId = _.last(_.split(window.location.pathname, '/'));
-    // const searchNews = _.filter(news, ['id', searchId]);
-    // console.log(window.location.pathname.match(/^\/[^/]+\/[^/]+/)[0])
-    const { id } = useParams();
-    const searchNews = _.filter(news, ['id', id]);
-    console.log('id', id)
-    console.log('search news', searchNews)
+  console.log('news', news)
+  // const searchId = _.last(_.split(window.location.pathname, '/'));
+  // const searchNews = _.filter(news, ['id', searchId]);
+  // console.log(window.location.pathname.match(/^\/[^/]+\/[^/]+/)[0])
+  const { id } = useParams();
+  const searchNews = _.filter(news, ['id', id]);
+  console.log('id', id)
+  console.log('search news', searchNews)
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        Aos.init();
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    Aos.init();
+  }, []);
 
-    return (
-        <div id="News">    
-            <PageBanner
-                pathname={'news'}
-            />
+  return (
+    <div id="News">    
+      <PageBanner
+        pathname={'news'}
+      />
 
-
-            {_.map(searchNews, (news) => (
-                <div>
-                    <div className='title-div'>
-                        <div className='title'>
-                            <FontAwesomeIcon icon={faNewspaper} className='icon' />
-                            {news.title}
-                        </div>
-                        <div className='date'>
-                            發佈日期：{news.date}
-                        </div>
-                    </div>
-                    <div className='content-div'>
-                        　　{news.content}
-                    </div>
-                </div>
-            ))}
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Link to='/home' className='link'>
-                    <FontAwesomeIcon icon={faList} className='icon' />
-                    回列表
-                </Link>
+      {_.map(searchNews, (news) => (
+        <div>
+          <div className='title-div'>
+            <div className='title'>
+              <FontAwesomeIcon icon={faNewspaper} className='icon' />
+              {news.title}
             </div>
-
+            <div className='date'>
+              發佈日期：{news.date}
+            </div>
+          </div>
+          <div className='line' style={{height: '3px'}}></div>
+          <div className='content-div'>
+            　　{news.content}
+          </div>
         </div>
-    )
+      ))}
+
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Link to='/home' className='link'>
+          <FontAwesomeIcon icon={faList} className='icon' />
+          回列表
+        </Link>
+      </div>
+
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {
-    return {
-        // GetTestData: _.get(state, "Lab01.TestData", []), 
-    };
+  return {
+    // GetTestData: _.get(state, "Lab01.TestData", []), 
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        // GET_TestData(payload, callback, loading) {
-        //     dispatch({type: "GET_TestData", payload, callback, loading});
-        // }, 
-    };
+  return {
+    // GET_TestData(payload, callback, loading) {
+    //     dispatch({type: "GET_TestData", payload, callback, loading});
+    // }, 
+  };
 };
 
 export default  connect(mapStateToProps, mapDispatchToProps)(News);

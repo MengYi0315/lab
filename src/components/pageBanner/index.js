@@ -51,19 +51,19 @@ const PageBanner = (props) => {
   // console.log('bannerData', bannerData)
 
   return (
-      <div id="pageBanner">
-          <Image 
-              src={bannerData.img}
-              w='100%'
-              h='100%'
-              alt='122'
-              className='banner-img kenburns-top'
-          />
-          <div className='banner-title slide-top'>
-              <div className='ch-text'>{bannerData.title}</div>
-              <div className='en-text'>{bannerData.enTitle}</div>
-          </div>
+    <div id="pageBanner">
+      <Image 
+        src={bannerData.img}
+        w='100%'
+        h='100%'
+        alt='122'
+        className='banner-img kenburns-top'
+      />
+      <div className='banner-title slide-top'>
+        <div className='ch-text'>{bannerData.title}</div>
+        <div className='en-text'>{bannerData.enTitle}</div>
       </div>
+    </div>
   );
 };
 
