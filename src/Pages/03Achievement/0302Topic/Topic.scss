@@ -6,11 +6,13 @@
     
 
     .text-div {
+      height: 500px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: flex-start;
       width: 100%;
-      margin: 0 0 0 40px;
+      margin: 0 0 0 50px;
       color: #050718;
 
       .title-div {
@@ -54,6 +56,26 @@
         margin-bottom: 40px;
       }
 
+      .link {
+        text-decoration: none;
+        color: #155484;
+        background-color: #e7eef2;
+        border-radius: 0 0 0 0;
+        border-top: 1px solid #e7eef2;
+        border-bottom: 1px solid #e7eef2;
+        transition: background-color 0.3s ease, border-bottom 0.3s ease, border-top 0.3s ease;
+
+        .icon {
+          margin-right: 10px;
+        }
+    
+        &:hover {
+          border-top: 1px solid #155484;
+          border-bottom: 1px solid #155484;
+          color: #155484;
+          background-color: #DCE5F2;
+        }
+      }
     }
   }
 }

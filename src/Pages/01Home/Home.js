@@ -17,10 +17,10 @@ import { connect } from 'react-redux';
 const Home = (props) => {
   const [activePage, setActivitePage] = useState(1);    
   const newsData = _.map(news, (initialNews) => ({
-      ...initialNews, 
-      year: moment(initialNews.date).format('YYYY'), 
-      month: moment(initialNews.date).format('MM'), 
-      day: moment(initialNews.date).format('DD'), 
+    ...initialNews, 
+    year: moment(initialNews.date).format('YYYY'), 
+    month: moment(initialNews.date).format('MM'), 
+    day: moment(initialNews.date).format('DD'), 
   }));
   console.log('test', newsData)
   console.log(window.location.pathname, '123')
@@ -30,13 +30,13 @@ const Home = (props) => {
   const paginatedData = _.chunk(newsData, itemPage);
   
   const setPage = (page) => {
-      setActivitePage(page);
+    setActivitePage(page);
   };
   // console.log('page data', paginatedData)
 
   useEffect(() => {
-      window.scrollTo(0, 0);
-      Aos.init();
+    window.scrollTo(0, 0);
+    Aos.init();
   }, []);
   console.log(props);
 
@@ -46,30 +46,30 @@ const Home = (props) => {
   return (
     <div id="Home">        
       <Carousel
-          className='carousel'
-          align={'start'}
-          draggable
-          // height={600}
-          slideGap="md"
-          withIndicators
+        className='carousel'
+        align={'start'}
+        draggable
+        // height={600}
+        slideGap="md"
+        withIndicators
       >
           {/* <Carousel.Slide>
 
           </Carousel.Slide> */}
-          <Carousel.Slide>
-              <img src={carousel1} className='carouselImg'></img>
-          </Carousel.Slide>
-          <Carousel.Slide>
-              <img src={carousel2} className='carouselImg'></img>
-          </Carousel.Slide>
-          <Carousel.Slide>
-              <img src={carousel3} className='carouselImg'></img>
-          </Carousel.Slide>
+        <Carousel.Slide>
+          <img src={carousel1} className='carouselImg'></img>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <img src={carousel2} className='carouselImg'></img>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <img src={carousel3} className='carouselImg'></img>
+        </Carousel.Slide>
       </Carousel>
 
       <div className='title' data-aos="fade-right">
-          <span>最新消息</span>
-          <span className='en-title'>News</span>
+        <span>最新消息</span>
+        <span className='en-title'>News</span>
       </div>
       <Flex
         // gap={'md'}

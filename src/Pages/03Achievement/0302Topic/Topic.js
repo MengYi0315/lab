@@ -1,9 +1,11 @@
 import _ from "lodash";
 import { useState, useEffect } from "react";
-import { Card, Image, Tabs } from "@mantine/core";
+import { Card, Image, Tabs, Text, Button } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks';
 import { connect } from "react-redux";
 import Aos from "aos";
 import PageBanner from "../../../components/pageBanner";
+import TopicModal from "../../../components/topicModal";
 import data from '../../../data/topic.json';
 import "../0302Topic/Topic.scss";
 
@@ -17,13 +19,18 @@ const yearData = [
 ];
 
 const Topic = (props) => {
+  const [selectYear, setSelectYear] = useState('2018');
+  const [modalData, setModalData] = useState({});
+  const [opened, { open, close }] = useDisclosure(false);
+
+  const getModalData = (id) => {
+    const selectModalData = _.find(data, { 'id': id });
+    setModalData(selectModalData);
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
     Aos.init();
   }, []);
-
-
-  const [selectYear, setSelectYear] = useState('2018');
 
   return (
     <div id="Topic">
@@ -57,7 +64,7 @@ const Topic = (props) => {
             <Tabs.Panel value={selectYear}>
               <Card
                 shadow="sm"
-                padding="lg" 
+                padding="xl" 
                 radius="md" 
                 withBorder
                 styles={{
@@ -90,26 +97,62 @@ const Topic = (props) => {
                   </div>
 
                   <div className="text-div">
-                    <div className="title-div">
-                      <span className="title">{item.title}</span>
-                      <span className="year">{item.year}年</span>
+                    <div>
+                      <div className="title-div">
+                        <span className="title">{item.title}</span>
+                        <span className="year">{item.year}年</span>
+                      </div>
+                      <div className="partner-div">
+                        {_.map(item.partner, (partner) => (
+                          <span className="partner">
+                            {partner}
+                          </span>
+                        ))}
+                      </div>
+                      <Text
+                        lineClamp={12}
+                        className="text"
+                      >
+                        {item.introduction}
+                      </Text>
                     </div>
-                    <div className="partner-div">
-                      {_.map(item.partner, (partner) => (
-                        <span className="partner">
-                          {partner}
-                        </span>
-                      ))}
+                    <div 
+                      style={{
+                        width: '100%',
+                        display: 'flex', 
+                        justifyContent: 'end', 
+                        alignItems: 'end'
+                      }}
+                    >
+                      <Button
+                        // variant="default"
+                        className="link"
+                        styles={{
+                          root: {
+                            height: '50px', 
+                            width: '150px'
+                          }
+                        }}
+                        onClick={() => {
+                          open();
+                          getModalData(item.id);
+                        }}
+                      >
+                        查看更多...
+                      </Button>
                     </div>
-                    <span className="text">
-                      {item.introduction}
-                    </span>
                   </div>
                 </div>  
               </Card>
             </Tabs.Panel>
           ))}
       </Tabs>
+      <TopicModal 
+        opened={opened}
+        open={open}
+        close={close}
+        modalData={modalData}
+      />
     </div>
   )
 }
