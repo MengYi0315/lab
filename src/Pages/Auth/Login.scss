@@ -1,6 +1,44 @@
 #Login {
-    text-align: center;
-    .logo {
-        margin-top: 100px;
-    }   
+  // margin: 0 20px;
+  // height: calc(100vh - 80px);
+  height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  .background {
+    background-image: url('../../assets/login_bg.jpg');
+    background-size: cover;
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  text-align: center;
+  .main_div {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  .logo {
+    margin-top: 100px;
+  }   
 }
+
+.login_div.m_e615b15f.mantine-Card-root.m_1b7284a3.mantine-Paper-root {
+  background-color: #ffffff94;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ffffffbf;
+  }
+}
+

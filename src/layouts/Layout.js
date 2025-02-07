@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { MantineProvider, createTheme, AppShell, Group, UnstyledButton, Menu, Image } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 
@@ -14,7 +14,8 @@ const theme = createTheme({
 });
 
 const Layout = () => {
-  // const [opened, { toggle }] = useDisclosure();
+  const location = useLocation();
+  const isLoginPage = _.includes(location.pathname, 'login');
 
   return (  
     <div>
@@ -22,7 +23,11 @@ const Layout = () => {
         <Header 
           menu={menu}
         />
-        <div style={{paddingTop: '80px'}}>
+        <div 
+          style={{
+            paddingTop: isLoginPage ? '0px' : '80px'
+          }}
+        >
           <Outlet />
         </div>
       </MantineProvider>

@@ -1,28 +1,71 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import _ from 'lodash';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Image, Menu } from '@mantine/core';
 import logo from '../../assets/logo.png';
 import './index.scss';
 
 const Header = (props) => {
   console.log('header props',props)
+  const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
+  const isLoginPage = _.includes(location.pathname, 'login');
+
+  const getHeaderBackground = () => {
+    if (!isLoginPage) 
+      return '#FFF';
+    return isHovered ? '#FFF' : 'transparent';
+  };
+  const getHeaderTextColor = () => {
+    if (!isLoginPage) 
+      return '#1F0737';
+    return isHovered ? '#1F0737' : '#FFF';
+  };
+  const getHeaderLogo = () => {
+    if (!isLoginPage) 
+      return 'block';
+    return isHovered ? 'block' : 'none';
+
+  };
+  
+
   return (
-    <div id="header">
+    <div 
+      id="header"
+      className={isLoginPage ? 'login-page' : ''}
+      style={{
+        backgroundColor: getHeaderBackground(),
+        transition: 'background-color 0.3s ease',
+        borderBottom: isLoginPage ? '0px' : '2px solid #ebedff',
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className='logo-div ml-20'>
         <Image 
           h={50}
           w="auto"
           radius={"md"}
           src={logo}
+          style={{
+            display: getHeaderLogo(),
+            transition: 'display 0.3s ease',
+          }}
         />
       </div>
       <div className='menu'>
         {_.map(props.menu, (m) => (
           <>
             {_.isEmpty(m.children) ? (
-              <Link to={m.path} className='menu-item'>
+              <Link 
+                to={m.path} 
+                className='menu-item'
+                style={{
+                  color: getHeaderTextColor(),
+                  transition: 'color 0.3s ease',
+                }}
+              >
                 {m.title}
               </Link>    
             ) : (
@@ -35,6 +78,10 @@ const Header = (props) => {
                 transitionProps={{
                   transition: 'scale-y', 
                   duration: 300,  
+                }}
+                style={{
+                  color: getHeaderTextColor(),
+                  transition: 'color 0.3s ease',
                 }}
               >
                 <Menu.Target>
@@ -56,14 +103,14 @@ const Header = (props) => {
                       component='a'
                       href={c.path}
                       styles={{ 
-                          item: {
-                              padding: '12px 10px', 
-                          },
-                          itemLabel: {
-                              textDecoration: 'none', 
-                              fontSize: '16px', 
-                              fontWeight: 'bold', 
-                          }, 
+                        item: {
+                          padding: '12px 10px', 
+                        },
+                        itemLabel: {
+                          textDecoration: 'none', 
+                          fontSize: '16px', 
+                          fontWeight: 'bold', 
+                        }, 
                           
                       }}
                     >

@@ -8,6 +8,7 @@ import awardImg from '../../assets/banner/award.jpg';
 import topicImg from '../../assets/banner/topic.jpg';
 import activityImg from '../../assets/banner/activity.jpg';
 import newsImg from '../../assets/banner/news.jpg';
+import loginImg from '../../assets/banner/login.jpg';
 import './index.scss';
 import '../../mixin/animista.scss';
 
@@ -41,6 +42,12 @@ const allBannerData = [
     title: '最新消息', 
     enTitle: 'News', 
     img: newsImg,
+  }, 
+  {
+    path: 'login', 
+    title: '登入', 
+    enTitle: 'Login', 
+    img: loginImg,
   },
 ];
 
