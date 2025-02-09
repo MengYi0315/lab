@@ -19,8 +19,8 @@ const Header = (props) => {
   };
   const getHeaderTextColor = () => {
     if (!isLoginPage) 
-      return '#1F0737';
-    return isHovered ? '#1F0737' : '#FFF';
+      return '#155484';
+    return isHovered ? '#155484' : '#FFF';
   };
   const getHeaderLogo = () => {
     if (!isLoginPage) 
@@ -33,7 +33,6 @@ const Header = (props) => {
   return (
     <div 
       id="header"
-      className={isLoginPage ? 'login-page' : ''}
       style={{
         backgroundColor: getHeaderBackground(),
         transition: 'background-color 0.3s ease',
@@ -60,17 +59,17 @@ const Header = (props) => {
             {_.isEmpty(m.children) ? (
               <Link 
                 to={m.path} 
-                className='menu-item'
+                className='menu_item'
                 style={{
                   color: getHeaderTextColor(),
-                  transition: 'color 0.3s ease',
+                  // transition: 'color 0.3s ease',
                 }}
               >
                 {m.title}
               </Link>    
             ) : (
               <Menu 
-                trigger='hover' 
+                trigger='click-hover' 
                 openDelay={100} 
                 closeDelay={100} 
                 offset={0} 
@@ -81,11 +80,11 @@ const Header = (props) => {
                 }}
                 style={{
                   color: getHeaderTextColor(),
-                  transition: 'color 0.3s ease',
+                  // transition: 'color 0.3s ease',
                 }}
               >
                 <Menu.Target>
-                  <Link to={m.path} className='menu-item'>
+                  <Link to={m.path} className='menu_item'>
                     {m.title}
                   </Link>
                 </Menu.Target>
@@ -111,7 +110,6 @@ const Header = (props) => {
                           fontSize: '16px', 
                           fontWeight: 'bold', 
                         }, 
-                          
                       }}
                     >
                       {c.title}

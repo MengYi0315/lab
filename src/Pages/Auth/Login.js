@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import { TextInput, Button, Center, Image, Space, Stack, Card, Text, Title } from "@mantine/core";
+import { TextInput, Button, Image, Space, Stack, Card, Title } from "@mantine/core";
 import Aos from "aos";
-import PageBanner from "../../components/pageBanner";
 import "../Auth/Login.scss";
 import logo from "../../assets/logo.png";
 import loginBackground from '../../assets/login_bg.jpg';
@@ -13,6 +12,7 @@ import '../../mixin/animista.scss';
 
 const Login = (props) => {
   const [loaded, setLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     Aos.init();
@@ -22,6 +22,7 @@ const Login = (props) => {
     console.log(background)
 
   }, []);
+
 
   return (
     <div id="Login">
@@ -38,81 +39,101 @@ const Login = (props) => {
         }}
       >
       </div>
-      <div 
-        className="main_div" 
-        data-aos="fade-up" 
-        data-aos-duration="800" 
-        data-aos-delay="300"
-      >
-        <Card
-          shadow="sm"
-          padding={"lg"}
-          radius={"md"}
-          className="login_div"
-          style={{
-            width:'40%', 
-            padding: '60px 100px', 
-          }}
+      <div className="main_div">
+        <div 
+          className="login_div" 
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          data-aos-delay="300"
         >
-          <Title order={2}>成員登入</Title>
-          <Space h="xl" />
-
-          <Stack
-            align="center"
-            justify="flex-start"
-            gap={"md"}
+          <Card
+            shadow="sm"
+            padding={"lg"}
+            radius={"md"}
+            style={{
+              width:'40%', 
+              padding: '60px 100px', 
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}      
           >
-            <TextInput
-              label="帳號"
-              placeholder="請輸入帳號..."
+            <Title 
+              order={2} 
+              className="shadow"
               styles={{
-                input: {
-                  backgroundColor: '#ffffff94',
-                },
-                label: {
-                  fontSize: '18px'
+                root: {
+                  color: '#041827',
                 }
-              }}
-              style={{
-                width:'70%', 
-                textAlign: 'start', 
-              }}
-            />
-            <TextInput
-              label="密碼"
-              placeholder="請輸入密碼..."
-              styles={{
-                input: {
-                  backgroundColor: '#ffffff94',
-                },
-                label: {
-                  fontSize: '18px'
-                }
-
-              }}
-              style={{
-                width:'70%', 
-                textAlign: 'start', 
-              }}
-            />
-            <Button 
-              size="md" 
-              mt="xl"
-              variant="filled" 
-              color="#155484" 
-              // radius="md" 
-              style={{
-                width:'70%', 
               }}
             >
-              登入
-            </Button>
-          </Stack>
+              成員登入
+            </Title>
+            <Space h="xl" />
 
-          
+            <Stack
+              align="center"
+              justify="flex-start"
+              gap={"md"}
+            >
+              <TextInput
+                label="帳號"
+                placeholder="請輸入帳號..."
+                className="shadow"
+                styles={{
+                  input: {
+                    backgroundColor: '#ffffff94',
+                    boxShadow: isHovered ? '2px 2px 5px #babdbe': 'none',
+                    transition: 'box-shadow 0.8s ease',
+                  },
+                  label: {
+                    fontSize: '18px',
+                    color: '#041827',
+                  }
+                }}
+                style={{
+                  width:'70%', 
+                  textAlign: 'start', 
+                }}
+              />
+              <TextInput
+                label="密碼"
+                placeholder="請輸入密碼..."
+                className="shadow"
+                styles={{
+                  input: {
+                    backgroundColor: '#ffffff94',
+                    boxShadow: isHovered ? '2px 2px 5px #babdbe': 'none',
+                    transition: 'box-shadow 0.8s ease',
+                  },
+                  label: {
+                    fontSize: '18px', 
+                    color: '#041827',
+                  }
+                }}
+                style={{
+                  width:'70%', 
+                  textAlign: 'start', 
+                }}
+              />
+              <Button 
+                size="md" 
+                mt="xl"
+                variant="filled" 
+                className="login_btn"
+                // radius="md" 
+                style={{
+                  width:'70%', 
+                }}
+              >
+                登入
+              </Button>
+            </Stack>
 
-        </Card>
+            
 
+          </Card>
+
+        </div>
       </div>
 
     </div>

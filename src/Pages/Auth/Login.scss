@@ -2,43 +2,65 @@
   // margin: 0 20px;
   // height: calc(100vh - 80px);
   height: 100vh;
-
   position: relative;
   overflow: hidden;
+  text-align: center;
+  color: #041827;
 
   .background {
-    background-image: url('../../assets/login_bg.jpg');
-    background-size: cover;
-
-    height: 100%;
-    width: 100%;
     position: absolute;
     z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/login_bg.jpg');
+    background-size: cover;
   }
 
-  text-align: center;
   .main_div {
     position: absolute;
     z-index: 5;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
 
-
+    .login_div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }  
   }
+  .shadow {
+    text-shadow: 2px 2px 4px #8e9499;
+  }
+
+  .login_btn {
+    color: #FFF;
+    background-color: #155484;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      color: #155484;
+      background-color: #DCE5F2;
+    }
+  }
+
   .logo {
     margin-top: 100px;
   }   
 }
 
-.login_div.m_e615b15f.mantine-Card-root.m_1b7284a3.mantine-Paper-root {
-  background-color: #ffffff94;
-  transition: background-color 0.3s ease;
+.m_e615b15f.mantine-Card-root.m_1b7284a3.mantine-Paper-root {
+  background-color: #ffffff6b;
+  transition: background-color 0.8s ease;
 
   &:hover {
     background-color: #ffffffbf;
   }
+}
+
+.m_8fb7ebe7:focus, .m_8fb7ebe7:focus-within {
+  --input-bd: #155484;
 }
 

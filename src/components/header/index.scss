@@ -6,7 +6,6 @@
   align-items: center;
   position: fixed;
   z-index: 100;
-  transition: background-color 0.3s ease;
 
   .menu {
     height: 100%;
@@ -15,7 +14,7 @@
     justify-content: center;
 
     
-    .menu-item {
+    .menu_item {
       height: 100%;
       width: 120px;
       list-style: none;
@@ -25,33 +24,26 @@
       font-size: 16px;
       font-weight: bold;
       position: relative;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
 
       
       &:hover {
-      background-color: #ebedff;
-      color: #10307e;
+      background-color: #DCE5F2;
+      color: #155484;
       }
     }
 
   }
   
-  &.login-page {
-    background-color: transparent;
-    
-    &:hover {
-      background-color: #FFF;
-    }
-  }
 }
 
 .mantine-Menu-item {
   background-color: #fff;
-  color: #1F0737; 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #155484; 
+  transition: background-color 0.4s ease, color 0.4s ease;
 
   &[data-hovered]{
-    color: #10307e;
-    background-color: #ebedff;
+    color: #155484;
+    background-color: #DCE5F2;
   }
 }

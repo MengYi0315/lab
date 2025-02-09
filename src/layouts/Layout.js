@@ -18,7 +18,7 @@ const Layout = () => {
   const isLoginPage = _.includes(location.pathname, 'login');
 
   return (  
-    <div>
+    <div className="Layout">
       <MantineProvider theme={theme}>
         <Header 
           menu={menu}

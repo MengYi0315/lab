@@ -2,11 +2,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import _ from 'lodash';
 import moment from 'moment';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Aos from 'aos';
 import { Carousel, CarouselSlide } from '@mantine/carousel';
-import { Flex, Space, Text, Pagination, Center } from '@mantine/core';
+import { Flex, Pagination } from '@mantine/core';
 import "../01Home/Home.scss";
 import news from '../../data/news.json';
 import carousel1 from "../../assets/carousel/1.png";
@@ -15,7 +15,7 @@ import carousel3 from "../../assets/carousel/3.png";
 import { connect } from 'react-redux';
 
 const Home = (props) => {
-  const [activePage, setActivitePage] = useState(1);    
+  const [activePage, setActivePage] = useState(1);    
   const newsData = _.map(news, (initialNews) => ({
     ...initialNews, 
     year: moment(initialNews.date).format('YYYY'), 
@@ -30,7 +30,7 @@ const Home = (props) => {
   const paginatedData = _.chunk(newsData, itemPage);
   
   const setPage = (page) => {
-    setActivitePage(page);
+    setActivePage(page);
   };
   // console.log('page data', paginatedData)
 
