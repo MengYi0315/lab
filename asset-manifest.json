@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/lab/static/css/main.63de86cd.css",
-    "main.js": "/lab/static/js/main.bc786d10.js",
-    "static/media/2.png": "/lab/static/media/2.f2189b2a8d418c57abaa.png",
-    "static/media/1.png": "/lab/static/media/1.e700fde14ee16be64b92.png",
+    "main.css": "/lab/static/css/main.654ad9cc.css",
+    "main.js": "/lab/static/js/main.118115a0.js",
+    "static/media/login_bg.jpg": "/lab/static/media/login_bg.f095221761be5bc26198.jpg",
+    "static/media/carousel1.jpg": "/lab/static/media/carousel1.3a140a98628bac0ea759.jpg",
+    "static/media/carousel3.jpg": "/lab/static/media/carousel3.59359b97b7afcc497776.jpg",
+    "static/media/carousel2.jpg": "/lab/static/media/carousel2.9160eda0d1a91aca58d4.jpg",
     "static/media/award.jpg": "/lab/static/media/award.7eeb0e6c039903b8aeca.jpg",
+    "static/media/login.jpg": "/lab/static/media/login.2eb82d42239db1516404.jpg",
     "static/media/news.jpg": "/lab/static/media/news.77133d4004bdd3a62c26.jpg",
     "static/media/professor.png": "/lab/static/media/professor.dc6ac2e569984cf895e3.png",
     "static/media/professor.jpg": "/lab/static/media/professor.4ff538598ea50770b00d.jpg",
     "static/media/activity.jpg": "/lab/static/media/activity.89136f4a8c873c3a516c.jpg",
     "static/media/topic.jpg": "/lab/static/media/topic.c3d21efe66ffb0afbcde.jpg",
-    "static/media/3.png": "/lab/static/media/3.20787ba9c72399d4c501.png",
     "static/media/logo.png": "/lab/static/media/logo.12bb445cddd464476784.png",
     "index.html": "/lab/index.html"
   },
   "entrypoints": [
-    "static/css/main.63de86cd.css",
-    "static/js/main.bc786d10.js"
+    "static/css/main.654ad9cc.css",
+    "static/js/main.118115a0.js"
   ]
 }
