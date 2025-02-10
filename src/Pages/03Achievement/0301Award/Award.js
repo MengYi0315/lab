@@ -30,11 +30,11 @@ const nutcYearData = [
 ];
 
 const tableList = [
-  { title: '競賽名稱', key: 'competition' },
-  { title: '競賽領域', key: 'group' },
-  { title: '專題名稱', key: 'project' },
-  { title: '專題組員', key: 'partner' },
-  { title: '得獎名次', key: 'rank' },
+  { title: '競賽名稱', key: 'competition', width: '18%' },
+  { title: '競賽領域', key: 'group', width: '25%' },
+  { title: '專題名稱', key: 'project', width: '19%' },
+  { title: '專題組員', key: 'partner', width: '31%' },
+  { title: '得獎名次', key: 'rank', width: '7%' },
 ];
 
 
@@ -170,11 +170,17 @@ const Award = (props) => {
           <Table 
             verticalSpacing={"md"}
             className="table"
+            highlightOnHover
+            styles={(theme) => ({
+              tr: {
+                transition: 'all 0.2s ease'
+              }
+            })}
           >
             <Table.Thead className="head">
               <Table.Tr>
                 {_.map(tableList, (list) => (
-                  <Table.Th key={list.key}>
+                  <Table.Th key={list.key} style={{ width: list.width }}>
                     {list.title}
                   </Table.Th>
                 ))}
