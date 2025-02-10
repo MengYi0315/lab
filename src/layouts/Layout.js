@@ -7,6 +7,10 @@ import Header from "../components/header";
 
 import "../layouts/Layout.scss";
 import menu from "../utils/menu";
+import hash_menu from "../utils/menu_hash";
+
+// browerRouter -> menu
+// hashRouter -> hash_menu
 
 const theme = createTheme({
   fontFamily: '"Noto Sans TC", sans-serif', 
@@ -22,6 +26,7 @@ const Layout = () => {
       <MantineProvider theme={theme}>
         <Header 
           menu={menu}
+          // menu={hash_menu}
         />
         <div 
           style={{

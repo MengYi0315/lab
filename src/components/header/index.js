@@ -98,22 +98,25 @@ const Header = (props) => {
                   }}    
                 >
                   {_.map(m.children, (c) => (
-                    <Menu.Item
-                      component='a'
-                      href={c.path}
-                      styles={{ 
-                        item: {
-                          padding: '12px 10px', 
-                        },
-                        itemLabel: {
-                          textDecoration: 'none', 
-                          fontSize: '16px', 
-                          fontWeight: 'bold', 
-                        }, 
-                      }}
+                    <Link 
+                      to={c.path} 
+                      style={{textDecoration: 'none'}}
                     >
-                      {c.title}
-                    </Menu.Item>
+                      <Menu.Item
+                        styles={{ 
+                          item: {
+                            padding: '12px 10px', 
+                          },
+                          itemLabel: {
+                            textDecoration: 'none', 
+                            fontSize: '16px', 
+                            fontWeight: 'bold', 
+                          }, 
+                        }}
+                      >
+                          {c.title}
+                      </Menu.Item>
+                    </Link>
                   ))}
                 </Menu.Dropdown>
               </Menu>

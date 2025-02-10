@@ -15,12 +15,12 @@ export default [
     useable: false, 
     children: [
       { 
-        path: "/#/achievement/award", 
+        path: "/achievement/award", 
         title: "歷屆榮耀", 
         useable: false,
       }, 
       { 
-        path: "/#/achievement/topic", 
+        path: "/achievement/topic", 
         title: "專題作品", 
         useable: false,
       }, 
@@ -31,9 +31,9 @@ export default [
       title: "活動紀錄", 
       useable: false, 
   }, 
-  // {
-  //     path: "/auth/login", 
-  //     title: "登入", 
-  //     useable: false, 
-  // }, 
+  {
+      path: "/auth/login", 
+      title: "登入", 
+      useable: false, 
+  }, 
 ];
