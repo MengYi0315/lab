@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import _ from "lodash";
 import { Flex, Image, Grid, Title, Stack, Text, Center } from "@mantine/core";
 import { connect } from "react-redux";
@@ -8,10 +8,12 @@ import teacherImg from '../../assets/professor.png';
 import "../02Professor/Professor.scss";
 
 const Professor = (props) => {
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
     Aos.init();
-  }, [])
+  }, []);
 
   return (
     <div id="Professor">
@@ -36,13 +38,14 @@ const Professor = (props) => {
               <span className="ch">姜琇森</span>
               <span className="en ml-20">Chiang Hsiu-sen</span>
             </div>
+            <div className="line"></div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="title ml-10">專長及研究領域：</span>
-              <span className="text ml-20">資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理</span>
+              <span className="text ml-20">機器學習、資料科學、自然語言處理、大型語言模型、專家系統、智慧交通、智慧醫療資訊、軟體智慧化、AI加值應用</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="title ml-10">辦公室：</span>
-              <span className="text ml-20">臺中科技大學 宏業樓 6405室</span>
+              <span className="text ml-20">臺中科技大學 弘業樓 6405室</span>
             </div>                        
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span className="title ml-10">專題研究室：</span>

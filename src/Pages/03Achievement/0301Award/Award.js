@@ -132,7 +132,7 @@ const Award = (props) => {
         <Text 
           style={{marginRight: '10px',}}
         >
-          查尋：
+          查詢：
         </Text>
         <Input 
           value={searchInput}
