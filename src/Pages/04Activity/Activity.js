@@ -97,11 +97,11 @@ const Activity = (props) => {
             </Card>
           </>
         ))}
-
-        <div className="mt-20">
+      </div>
+      <div className="mt-20">
+        <Center>
           <Pagination total={maxPage} value={activePage} onChange={setPage} siblings={1} />
-        </div>
-
+        </Center>
       </div>
     </div>
   )   

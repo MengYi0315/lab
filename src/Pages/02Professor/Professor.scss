@@ -45,6 +45,17 @@
         width: 100%;
         height: 1px;
       }
-    } 
+
+      .text_item {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+      }
+
+      .text_item.expanded {
+        height: auto;
+        transition: height 0.5s ease-in-out;
+      }
+    }
   }
 }

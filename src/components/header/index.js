@@ -7,7 +7,6 @@ import logo from '../../assets/logo.png';
 import './index.scss';
 
 const Header = (props) => {
-  console.log('header props',props)
   const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
   const isLoginPage = _.includes(location.pathname, 'login');
