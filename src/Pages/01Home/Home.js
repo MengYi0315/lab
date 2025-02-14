@@ -46,6 +46,7 @@ const Home = (props) => {
   console.log('test', newsData)
   console.log(window.location.pathname, '123')
 
+  // *分頁相關
   const itemPage = 5;
   const maxPage = _.ceil(newsData.length / itemPage);
   const paginatedData = _.chunk(newsData, itemPage);
@@ -83,15 +84,6 @@ const Home = (props) => {
             />
           </Carousel.Slide>
         ))}
-        {/* <Carousel.Slide>
-          <img src={carousel1} className='carouselImg'></img>
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <img src={carousel2} className='carouselImg'></img>
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <img src={carousel3} className='carouselImg'></img>
-        </Carousel.Slide> */}
       </Carousel>
 
       <div className='title' data-aos="fade-right">

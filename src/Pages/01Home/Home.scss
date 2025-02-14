@@ -37,7 +37,7 @@
     list-style: none;
     width: 100%;
     padding: 8px 20px;
-    color: #050718;
+    color: #041827;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-bottom: 2px solid #ccd2df;
 
@@ -77,8 +77,8 @@
     }
 
     &:hover {
-        color: #10307e;
-        background-color: #edf6ff;
+        color: #155484;
+        background-color: #e8ecf3;
     }
   }
 }
@@ -90,8 +90,8 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    color: #050718;
-    background-color: #edf6ff;
+    color: #041827;
+    background-color: #e8ecf3;
   }
 
   &[data-active] {

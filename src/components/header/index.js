@@ -27,7 +27,17 @@ const Header = (props) => {
     return isHovered ? 'block' : 'none';
 
   };
-  
+  const getHeaderTextShadow = () => {
+    if (isLoginPage) {
+      if (isHovered) {
+        return '0px 0px 0px #041827';
+      } else {
+        return '1px 1px 4px #041827';
+      }
+    } else {
+      return '0px 0px 0px #041827';
+    }
+  };
 
   return (
     <div 
@@ -61,7 +71,8 @@ const Header = (props) => {
                 className='menu_item'
                 style={{
                   color: getHeaderTextColor(),
-                  // transition: 'color 0.3s ease',
+                  textShadow: getHeaderTextShadow(), 
+                  transition: 'text-shadow 0.3s ease, color 0.3s ease',
                 }}
               >
                 {m.title}
@@ -79,7 +90,8 @@ const Header = (props) => {
                 }}
                 style={{
                   color: getHeaderTextColor(),
-                  // transition: 'color 0.3s ease',
+                  textShadow: getHeaderTextShadow(), 
+                  transition: 'text-shadow 0.3s ease, color 0.3s ease',
                 }}
               >
                 <Menu.Target>

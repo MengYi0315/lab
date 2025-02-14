@@ -100,7 +100,19 @@ const Activity = (props) => {
       </div>
       <div className="mt-20">
         <Center>
-          <Pagination total={maxPage} value={activePage} onChange={setPage} siblings={1} />
+          <Pagination 
+            total={maxPage} 
+            value={activePage} 
+            onChange={setPage} 
+            siblings={1} 
+            styles={{
+              control: {
+                borderRadius: '0px',
+                padding: '0px',
+                marginTop: '20px',
+              },
+            }}
+          />
         </Center>
       </div>
     </div>

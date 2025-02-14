@@ -13,7 +13,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      color: #050718;
+      color: #041827;
       // margin-left: ;
 
       .ch, .en {
@@ -30,31 +30,28 @@
         font-size: 20px;
       }
 
-      .title {
-        font-size: 20px;
-        font-weight: bold;
+      .text_item {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: 20px;
+          font-weight: bold;
+          color: #155484;
+        }
+  
+        .text {
+          font-size: 18px;
+          color: #041827;
+        }
+  
       }
 
-      .text {
-        font-size: 18px;
-        color: #050718;
-      }
 
       .line {
         border-bottom: 1px #155484 solid;
         width: 100%;
         height: 1px;
-      }
-
-      .text_item {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.5s ease-in-out;
-      }
-
-      .text_item.expanded {
-        height: auto;
-        transition: height 0.5s ease-in-out;
       }
     }
   }
