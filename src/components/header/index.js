@@ -72,7 +72,6 @@ const Header = (props) => {
                 style={{
                   color: getHeaderTextColor(),
                   textShadow: getHeaderTextShadow(), 
-                  transition: 'text-shadow 0.3s ease, color 0.3s ease',
                 }}
               >
                 {m.title}
@@ -91,7 +90,6 @@ const Header = (props) => {
                 style={{
                   color: getHeaderTextColor(),
                   textShadow: getHeaderTextShadow(), 
-                  transition: 'text-shadow 0.3s ease, color 0.3s ease',
                 }}
               >
                 <Menu.Target>

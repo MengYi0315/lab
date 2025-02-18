@@ -23,7 +23,7 @@
       font-size: 16px;
       font-weight: bold;
       position: relative;
-      transition: background-color 0.4s ease, color 0.4s ease;
+      transition: background-color 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
   
       &:hover {
       background-color: #DCE5F2;
@@ -36,7 +36,7 @@
 .mantine-Menu-item {
   background-color: #fff;
   color: #155484; 
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
 
   &[data-hovered]{
     color: #155484;

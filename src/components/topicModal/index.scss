@@ -18,6 +18,11 @@
 
   .content_div {
     width: 100%;
+
+    .text {
+      // *\n斷行
+      white-space: pre-line;
+    }
   }
 }
 
