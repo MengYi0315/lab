@@ -31,7 +31,7 @@ const TopicModal = (props) => {
       opened={opened} 
       onClose={close} 
       size={'70%'}
-      scrollAreaComponent={ScrollArea.Autosize}
+      // scrollAreaComponent={ScrollArea.Autosize}
       title={modalData.title}
       styles={{
         title: {
@@ -42,6 +42,9 @@ const TopicModal = (props) => {
         content: {
           height: '100vh',
         },
+        body: {
+          height: '90%'
+        }
       }}
     >
       <div id='partner-div'>
@@ -63,17 +66,28 @@ const TopicModal = (props) => {
           <div className='content_div ml-20'>
             <Accordion 
               styles={{
+                root: {
+                  height: '100%'
+                },
                 label: {
                   fontWeight: 'bold',
                 }
               }}  
             >
+              
               <Accordion.Item key={'introduction'} value={'introduction'}>
                 <Accordion.Control>專題介紹</Accordion.Control>
                 <Accordion.Panel>
-                  <Text className='text'>
-                    {processedModalData.introduction}
-                  </Text>
+                  <ScrollArea 
+                    h={300} 
+                    type="auto"
+                    offsetScrollbars
+                  >
+                    <Text className='text'>
+                      {processedModalData.introduction}
+                    </Text>
+
+                  </ScrollArea>
                 </Accordion.Panel>
               </Accordion.Item>
               <Accordion.Item key={'youtube'} value={'youtube'}>
