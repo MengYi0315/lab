@@ -1,8 +1,9 @@
-#partner-div {
+#partner_div {
+  height: 32px;
   display: flex;
   flex-wrap: wrap;
 
-  .name-div {
+  .name_div {
     font-size: 14px;
     color: #155484;
     background-color: #e7eef2;
@@ -15,13 +16,16 @@
 #topic_div {
   display: flex;
   width: 100%;
+  height: calc(100% - 52px);
 
   .content_div {
     width: 100%;
+    height: 100%;
 
     .text {
-      // *\n斷行
+      // * pre-line -> \n斷行
       white-space: pre-line;
+      text-align: justify;
     }
   }
 }

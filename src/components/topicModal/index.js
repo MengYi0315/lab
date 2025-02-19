@@ -7,9 +7,9 @@ import '../../mixin/animista.scss';
 import undefindImg from '../../assets/undefinded.svg';
 
 const TopicModal = (props) => {
-  console.log('topic modal props',props);
+  // console.log('topic modal props',props);
   const [processedModalData, setProcessedModalData] = useState([]);
-  const { opened, open, close } = props; // mantine hook api
+  const { opened, open, close } = props; // * mantine hook api
   const { modalData } = props;
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const TopicModal = (props) => {
       ...modalData, 
       youtubeURL: videoId !== 'null' ? `https://www.youtube.com/embed/${videoId}` : 'null', 
     };
-    console.log(initialModalData)
+    // console.log(initialModalData)
     setProcessedModalData(initialModalData);
   }, [modalData]);
 
@@ -31,7 +31,6 @@ const TopicModal = (props) => {
       opened={opened} 
       onClose={close} 
       size={'70%'}
-      // scrollAreaComponent={ScrollArea.Autosize}
       title={modalData.title}
       styles={{
         title: {
@@ -47,9 +46,9 @@ const TopicModal = (props) => {
         }
       }}
     >
-      <div id='partner-div'>
+      <div id='partner_div'>
         {_.map(processedModalData.partner, (item) => (
-          <div className='name-div'>
+          <div className='name_div'>
             {item}
           </div>
         ))}
@@ -67,31 +66,33 @@ const TopicModal = (props) => {
             <Accordion 
               styles={{
                 root: {
-                  height: '100%'
+                  height: '100%',
+                },
+                control: {
+                  height: '50px',
                 },
                 label: {
                   fontWeight: 'bold',
+                  height: '100%',
                 }
               }}  
             >
-              
               <Accordion.Item key={'introduction'} value={'introduction'}>
                 <Accordion.Control>專題介紹</Accordion.Control>
                 <Accordion.Panel>
                   <ScrollArea 
-                    h={300} 
+                    h={'370'} 
                     type="auto"
                     offsetScrollbars
                   >
                     <Text className='text'>
                       {processedModalData.introduction}
                     </Text>
-
                   </ScrollArea>
                 </Accordion.Panel>
               </Accordion.Item>
               <Accordion.Item key={'youtube'} value={'youtube'}>
-                <Accordion.Control>影片</Accordion.Control>
+                <Accordion.Control>專題影片</Accordion.Control>
                 <Accordion.Panel>
                   {processedModalData.youtubeURL !== 'null' ? (
                     <iframe 
@@ -115,7 +116,6 @@ const TopicModal = (props) => {
             </Accordion>
           </div>
         </div>
-
     </Modal>
   );
 };
