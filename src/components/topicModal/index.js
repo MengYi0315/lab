@@ -38,9 +38,6 @@ const TopicModal = (props) => {
           color: '#155484',
           fontSize: '25px',
         }, 
-        content: {
-          height: '100vh',
-        },
         body: {
           height: '90%'
         }
@@ -81,7 +78,7 @@ const TopicModal = (props) => {
                 <Accordion.Control>專題介紹</Accordion.Control>
                 <Accordion.Panel>
                   <ScrollArea 
-                    h={'370'} 
+                    h={'275'} 
                     type="auto"
                     offsetScrollbars
                   >
